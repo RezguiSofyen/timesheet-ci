@@ -35,10 +35,10 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	}
 	@Override
 	public Entreprise ajoutEntreprise(Entreprise e) {
-		l.info("Ajout Departement : " + e);
-		Entreprise depr = entrepriseRepository.save(e);
+		l.info("Ajout Entreprise : " + e);
+		Entreprise entre = entrepriseRepository.save(e);
 		l.info(e + "Entreprise Ajouté");
-		return depr;
+		return entre;
 	}
 
 	@Override

@@ -5,18 +5,26 @@ import java.text.ParseException;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import tn.esprit.spring.entities.Departement;
 
 import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.services.IDepartementService;
+import tn.esprit.spring.services.IEntrepriseService;
 
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class DepartementTest {
 	Entreprise entreprise=new Entreprise();
 	Departement departement = new Departement("Departement1",entreprise);
 	@Autowired
 	IDepartementService us;
+	IEntrepriseService us2;
 	
 	@Test
 	public void testegaliterID(){
@@ -34,10 +42,11 @@ public class DepartementTest {
 	@Test
 	public void TestajoutDep() throws ParseException {
 		
-		String typeDepartement="INFO";
-		Entreprise  entreprise=new Entreprise(1,"Sopra","raisonSocial");
+		String typeDepartement="Cloud";
+		//Entreprise entreprise=us2.chercherEntreprise(1);
+		Entreprise entreprise=new Entreprise(1,"Sopra","raisonSocial");
 		Departement d = new Departement(typeDepartement,entreprise); 
-		//Departement d2 = new Departement(typeDepartement,entreprise);
+		Departement d2 = new Departement("Prodops",entreprise);
 		Departement addDep = us.ajoutDep(d);
 		//us.ajoutDep(d);
 	//	us.ajoutDep(d2);
