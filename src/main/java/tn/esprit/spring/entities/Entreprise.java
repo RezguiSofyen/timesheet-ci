@@ -79,18 +79,15 @@ public class Entreprise implements Serializable{
 		this.raisonSocial = raisonSocial;
 	}
 
-	public List<Departement> getDepartements() {
-		return departements;
-	}
 
-	public void setDepartements(List<Departement> departements) {
-		this.departements = departements;
-	}
+
+
 	
 	
-	public void addDepartement(Departement departement){
-		departement.setEntreprise(this);
-		this.departements.add(departement);
+	@Override
+	public String toString() {
+		return "Entreprise [id=" + id + ", name=" + name + ", raisonSocial=" + raisonSocial + ", departements="
+				+ departements + "]";
 	}
 
 

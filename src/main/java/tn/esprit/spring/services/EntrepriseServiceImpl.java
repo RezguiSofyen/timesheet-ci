@@ -21,14 +21,13 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	@Autowired
 	EntrepriseRepository entrepriseRepository;
 	
-	@Autowired 
-	IDepartementService dep;
+
 
 	public List<Entreprise> getAllEntreprise() {
-		l.info("In  retrieveAllContrats : ");
+		l.info("Récupéerer tous les entreprises : ");
 		List<Entreprise> listCont = (List<Entreprise>) entrepriseRepository.findAll();
-		for (Entreprise cont : listCont) {
-			l.debug("Entreprise  : " + cont);
+		for (Entreprise entreprise : listCont) {
+			l.debug("Entreprise  : " + entreprise);
 		}
 		l.info(" tout les entreprise trouver");
 		return listCont;
@@ -43,14 +42,9 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 
 	@Override
 	public void suppriEntrepriseById(int entrepriseID) {
-		l.info("supprimé contrat id : " + entrepriseID);
+		l.info("supprimé entreprise id : " + entrepriseID);
 		entrepriseRepository.delete(entrepriseRepository.findById(entrepriseID).get());
 
-	}
-	@Override
-	public List<Entreprise> getAllDepartements() {
-		l.info("trouver tous les département");
-		return (List<Entreprise>) entrepriseRepository.findAll();
 	}
 
 	@Override

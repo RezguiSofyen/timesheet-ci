@@ -48,10 +48,15 @@ public class DepartementTest {
 		Departement d = new Departement(typeDepartement,entreprise); 
 		Departement d2 = new Departement("Prodops",entreprise);
 		Departement addDep = us.ajoutDep(d);
-		//us.ajoutDep(d);
+		Departement addDep2=us.ajoutDep(d2);
 	//	us.ajoutDep(d2);
-	//	Assert.assertEquals(d.getId(),addDep.getId());
+		Assert.assertEquals(d.getId(),addDep.getId());
 		
+	}
+	@Test
+	public void TestsuppriDepartementById() throws ParseException {
+		
+		us.suppriDepartementById(4);
 	}
 	
 	

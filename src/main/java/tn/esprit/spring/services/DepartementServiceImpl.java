@@ -33,7 +33,6 @@ public class DepartementServiceImpl implements IDepartementService {
 		return listCont;
 	}
 	@Override
-
 	public Departement ajoutDep(Departement d) {
 		l.info("Ajout Departement : " + d);
 		Departement depr = departementRepository.save(d);
@@ -61,10 +60,6 @@ public class DepartementServiceImpl implements IDepartementService {
 		l.info("Departement  : " + d.toString());
 		return d; 
 	}
-	@Override
-	public void deleteDepartementById(int depId) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }
