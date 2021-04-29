@@ -38,29 +38,37 @@ public class EntrepriseTest {
 		
 	}
 	
+	
 	@Test
 	public void TestajoutEntreprise() throws ParseException {
 		
 		
-		Entreprise  entreprise=new Entreprise("Sofrecom","raisonSocial");
-		
+		Entreprise  entreprise=new Entreprise("Soprahr","raisonSocial");
+		Entreprise  entreprise2=new Entreprise("Vermeg","raisonSocial");
 		
 		Entreprise ajoutentreprise = us.ajoutEntreprise(entreprise);
 		System.out.print(ajoutentreprise.toString());
-	//	us.ajoutEntreprise(entreprise);
-	//	us.ajoutDep(d2);
-	//	Assert.assertEquals(d.getId(),addDep.getId());
+		us.ajoutEntreprise(entreprise);
+		us.ajoutEntreprise(entreprise2);
+		Assert.assertEquals(entreprise.getRaisonSocial(),entreprise.getRaisonSocial());
 		
 	}
 	
 	@Test
 	public void TestsuppriEntrepriseById(){
-		Entreprise entreprise=us.chercherEntreprise(2);
+		// Afficher tous les entreprises avant suppression
+		us.getAllEntreprise();
+		Entreprise entreprise=us.chercherEntreprise(4);
 		l.info("Suppression Entreprise  : " + entreprise.toString());
-		us.suppriEntrepriseById(1);
+		us.suppriEntrepriseById(4);
 		l.info("Entreprise supprimé");
 		
 	}
 	
+	@Test
+	public void TestgetAllEntreprise(){
+		l.info("Affichage all entreprise");
+		us.getAllEntreprise();
+	}
 	
 }

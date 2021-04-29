@@ -44,7 +44,7 @@ public class DepartementTest {
 		
 		String typeDepartement="Cloud";
 		//Entreprise entreprise=us2.chercherEntreprise(1);
-		Entreprise entreprise=new Entreprise(1,"Sopra","raisonSocial");
+		Entreprise entreprise=new Entreprise(10,"Sopra","raisonSocial");
 		Departement d = new Departement(typeDepartement,entreprise); 
 		Departement d2 = new Departement("Prodops",entreprise);
 		Departement addDep = us.ajoutDep(d);
@@ -56,7 +56,7 @@ public class DepartementTest {
 	@Test
 	public void TestsuppriDepartementById() throws ParseException {
 		
-		us.suppriDepartementById(4);
+		//us.suppriDepartementById(1);
 	}
 	
 	

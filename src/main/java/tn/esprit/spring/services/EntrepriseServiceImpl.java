@@ -27,7 +27,8 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 		l.info("Récupéerer tous les entreprises : ");
 		List<Entreprise> listCont = (List<Entreprise>) entrepriseRepository.findAll();
 		for (Entreprise entreprise : listCont) {
-			l.debug("Entreprise  : " + entreprise);
+			System.out.println(entreprise.toString());
+			l.debug("***********Entreprise  : " + entreprise.toString() + "********");
 		}
 		l.info(" tout les entreprise trouver");
 		return listCont;
