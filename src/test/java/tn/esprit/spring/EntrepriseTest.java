@@ -58,9 +58,10 @@ public class EntrepriseTest {
 	public void TestsuppriEntrepriseById(){
 		// Afficher tous les entreprises avant suppression
 		us.getAllEntreprise();
-		Entreprise entreprise=us.chercherEntreprise(4);
-		l.info("Suppression Entreprise  : " + entreprise.toString());
-		us.suppriEntrepriseById(4);
+		Entreprise entreprise=us.chercherEntreprise(6);
+		l.info("Suppression Entreprise  : "+entreprise.toString());
+		System.out.println(entreprise.toString());
+		us.suppriEntrepriseById(6);
 		l.info("Entreprise supprimé");
 		
 	}
